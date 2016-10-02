@@ -9,6 +9,8 @@
 			label:hover, input:hover {font-size:25px;}
 			.auto-width {width:auto;}
 			span {text-align:center;vertical-align:top;}
+			span.first-label {background:red;}
+			span.second-label {background:purple;}
 			textarea {width:360px;height:50px;}
 			
 		</style>
@@ -66,15 +68,15 @@
 				<legend>Your Indicators</legend>
 				<p>
 					<label for="height">Height:</label>
-					<span>Short</span>
+					<span class="first-label">Short</span>
 					<input type="range" id="height" name="height" min="0" max="100">
-					<span>Tall</span>
+					<span class="second-label">Tall</span>
 				</p>
 				<p>
 					<label for="salary">Salary:</label>
-					<span>Poor</span>
+					<span class="first-label">Poor</span>
 					<input type="range" id="salary" name="salary" min="0" max="100">
-					<span>Rich</span>
+					<span class="second-label">Rich</span>
 				</p>
 			</fieldset>
 			<fieldset>
