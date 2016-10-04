@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Colour Guessing Game - Assessment 2</title>
+		<script>
+			var target_index;
+			var target;
+			var colours;
+			var guess;
+			var finished = false;
+			var num_guesses = 0;
+
+			target_index = (parseInt(Math.random() * 9)+1);
+			colours = ['blue', 'cyan','gold','gray','green','magenta','orange','red','white','yellow'];
+			target = colours[target_index];
+			
+			alert(target);
+			
+			function do_game() {
+				do {
+					guess = prompt(
+						'I am thinking of one of these colours: \n\n' +
+						'blue, cyan, gold, gray, green, magenta, orange, red, white yellow \n\n' +
+						'What colour am I thinking of?'
+					)
+					
+					check_guess(guess);
+					
+					num_guesses++;
+					
+				} while (!finished);
+				
+				alert("You are right! You took " + num_guesses + " guesses!");
+			}
+			
+			function check_guess(guess) {
+				if (colours.indexOf(guess) == -1) {
+					alert("I don't recognise that colour");
+					return false;
+				}
+				if (guess > target) {
+					alert("Your guess is alphabetically higher than mine");
+					return false;
+				}
+				if (guess < target) {
+					alert("Your guess is alphabetically lower than mine");
+					return false;
+				}
+				
+				myBody=document.getElementsByTagName("body")[0];
+				myBody.style.background=target;
+				finished = true;
+			}
+		</script>
+	</head>
+	<body onload="do_game();">
+	</body>
+</html<
